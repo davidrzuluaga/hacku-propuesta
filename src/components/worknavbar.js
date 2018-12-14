@@ -3,6 +3,14 @@ import {Row, Col } from 'react-bootstrap'
 import '../assets/stylesheets/worknavbar.css';
 
 class WorkNavbar extends Component {
+    constructor() {
+        super();
+        this.state = {
+            topic: [
+                {step: "HS", area: "ser"}
+            ]
+        }
+    }
     render() {
       return (
             <div className="workNavbar">
@@ -14,9 +22,9 @@ class WorkNavbar extends Component {
                         <p><span className="fa fa-lightbulb-o"></span> Validar <span className="fa fa-chevron-down"></span></p>
                     </Col>
                     <Col sm={1} className="areas">
-                        <p><span className="fa fa-line-chart"></span> ser</p>
+                        <p><span className="fa fa-line-chart"></span> ser <span className="selected"></span></p>
                         <p><span className="fa fa-area-chart"></span> saber</p>
-                        <p><span className="fa fa-bar-chart"></span> hacer</p>
+                        <p><span className="fa fa-bar-chart"></span> hacer </p>
                     </Col>
                     <Col sm={3} className="steps">
                         <p><span className="fa fa-pie-chart"></span> Hacker Space</p>
