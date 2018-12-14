@@ -7,13 +7,14 @@ class NavbarComp extends Component {
       return (
           <Navbar inverse className="navbar-fixed-top">
             <Navbar.Header>
-              <Navbar.Brand>
+              <Navbar.Brand className="navbar-left">
                 <img src="https://s3.amazonaws.com/hacku.co/logo-blanco-baja.png" alt="logo"/>
               </Navbar.Brand>
-            </Navbar.Header>
-            <Navbar.Header className="navbar-right">
-              <Nav pullRight>
-                <NavItem eventKey={1} href="#solicitudes">
+              <Nav className="navbar-right">
+                <NavItem eventKey={1} href="#feedback">
+                  FEEDBACK
+                </NavItem>
+                <NavItem eventKey={2} href="#solicitudes">
                   <i class="fa fa-hand-pointer-o"></i>
                 </NavItem>
                 <NavItem className="calendar" eventKey={2} href="#calendario">
@@ -30,7 +31,6 @@ class NavbarComp extends Component {
                 </NavItem>
               </Nav>
             </Navbar.Header>
-
           </Navbar>
         )
     }
