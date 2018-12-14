@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Row, Col } from 'react-bootstrap'
-import '../worknavbar.css';
+import '../assets/stylesheets/worknavbar.css';
 
 class WorkNavbar extends Component {
     render() {

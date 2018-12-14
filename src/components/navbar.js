@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Row, Col } from 'react-bootstrap'
-import '../navbar.css';
+import '../assets/stylesheets/navbar.css';
 
 class NavbarComp extends Component {
     render() {

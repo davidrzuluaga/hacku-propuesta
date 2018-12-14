@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import {Row, Col } from 'react-bootstrap'
-import '../secworknavbar.css';
+import '../assets/stylesheets/secworknavbar.css';
 
 class SecWorkNavbar extends Component {
     render() {
       return (
             <div className="secWorkNavbar">
-                <Row>
+                <Row className="baritems">
                     <Col sm={2} className="doing">
                         <p><span className="fa fa-lightbulb-o"></span> Validar <span className="fa fa-chevron-down"></span></p>
                     </Col>

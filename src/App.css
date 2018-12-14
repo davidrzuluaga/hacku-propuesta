@@ -27,6 +27,12 @@
   border-style: solid 10px;
   border-color: gray;
 }
+.main h1:hover {
+  color: #E7405A;
+}
+.main a {
+  text-decoration: none;
+}
 .cardnum{
   padding-left: 140px;
   padding-right: 0px;

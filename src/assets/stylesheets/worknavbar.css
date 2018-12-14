@@ -152,9 +152,9 @@
       border-left-color: rgba(255, 255, 255, 0.473)
   }
 }
-@media (max-width: 1100px) {.workNavbar .logo img { display:none }}
-@media (max-width: 990px) {.workNavbar .logo img { display: block }}
-@media (max-width: 865px) {.workNavbar .logo img { display:none }}
+@media (max-width: 1100px) {.workNavbar .logo img { display: none; visibility: hidden; }}
+@media (max-width: 990px) {.workNavbar .logo img { display: block; visibility: visible; }}
+@media (max-width: 865px) {.workNavbar .logo img { display: none; visibility: hidden;}}
 @media (max-width: 768px) {
     .workNavbar {
         margin-top: 80px;
