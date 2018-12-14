@@ -1,37 +1,39 @@
 import React, { Component } from 'react';
-import {Nav, Navbar, NavItem } from 'react-bootstrap'
-import '../App.css';
+import {Row, Col } from 'react-bootstrap'
+import '../navbar.css';
 
 class NavbarComp extends Component {
     render() {
       return (
-          <Navbar inverse className="navbar-fixed-top">
-            <Navbar.Header>
-              <Navbar.Brand className="navbar-left">
+        <div className="Navbar">
+          <Row>
+            <Col smOffset={1} sm={2} className="logonav">
                 <img src="https://s3.amazonaws.com/hacku.co/logo-blanco-baja.png" alt="logo"/>
-              </Navbar.Brand>
-              <Nav className="navbar-right">
-                <NavItem eventKey={1} href="#feedback">
-                  FEEDBACK
-                </NavItem>
-                <NavItem eventKey={2} href="#solicitudes">
-                  <i class="fa fa-hand-pointer-o"></i>
-                </NavItem>
-                <NavItem className="calendar" eventKey={2} href="#calendario">
-                  <i class="fa fa-calendar-o"></i>
-                </NavItem>
-                <NavItem eventKey={3} href="#stickynote">
-                  <i class="fa fa-sticky-note-o"></i>
-                </NavItem>
-                <NavItem eventKey={4} href="#mensajes">
-                  <i class="fa fa-envelope-o"></i>
-                </NavItem>
-                <NavItem eventKey={5} href="#usuario">
-                  <i class="fa fa-user-o"></i>                  
-                </NavItem>
-              </Nav>
-            </Navbar.Header>
-          </Navbar>
+            </Col>
+            <Col sm={4} className="navitems">
+              <ul>
+                <li>
+                  <a href="#feedback">FEEDBACK</a>
+                </li>
+                <li>
+                  <a href="#solicitudes"><i className="fa fa-hand-pointer-o"></i></a>
+                </li>
+                <li className="calendar">
+                  <a href="#calendario"><i className="fa fa-calendar-o"></i></a>
+                </li>
+                <li>
+                  <a href="#stickynote"><i className="fa fa-sticky-note-o"></i></a>
+                </li>
+                <li>
+                  <a href="#mensajes"><i className="fa fa-envelope-o"></i></a>
+                </li>
+                <li>
+                  <a href="#usuario"><i className="fa fa-user-o"></i></a>                  
+                </li>
+              </ul> 
+            </Col>
+          </Row>
+        </div>
         )
     }
 }

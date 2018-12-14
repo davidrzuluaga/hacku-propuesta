@@ -6,156 +6,10 @@
   min-height: 94vh;
   overflow: hidden;
 }
-.navbar-fixed-top {
-  background-color: rgba(0, 0, 0, 0.6);
-  border-bottom: rgba(0, 0, 0, 0.6);
-  height: auto;
-}
-.navbar-header img{
-  height: 70px;
-}
-.navbar-right {
-  padding-top: 10px;
-  padding-left: 5px;
-}
-.navbar-collapse.collapse {
-  display: block!important;
-}
 
-.navbar-nav>li, .navbar-nav {
-  float: left !important;
-}
-
-.navbar-nav.navbar-right:last-child {
-  margin-right: -15px !important;
-}
-
-.navbar-right {
-  float: right!important;
-}
-.workNavbar {
-  margin-top: 20px;
-  width: auto;
-  height: 90px;
-  background-color: rgba(0, 0, 0, 0.7);;
-  color: rgb(216, 216, 216);
-}
-.fa-lightbulb-o {color: yellow; }
-.workNavbar p, h1 {text-transform: uppercase; }
-.topic {
-  color: white;
-  font-family: 'Oswald', sans-serif;
-  padding-left: 40px;
-  padding-top: 5px;
-  width: 250px;
-}
-.doing {
-  padding-top: 35px;
-  font-size: 15px;
-  height: 90px;
-  width: 140px;
-}
-.fa-chevron-down{
-  -webkit-transform: rotate(270deg);
-}
-.areas {
-  padding-left: 0;
-  padding-top: 15px;
-  font-size: 15px;
-  height: 90px;
-  width: 100px;
-}
-.areas p {
-  margin: 0
-}
-
-.areas p {
-  position: relative;
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-}
-
-.areas p:hover {
-  color: rgb(199, 199, 199);
-  cursor: pointer;
-}
-
-.areas p:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background: linear-gradient(90deg, rgba(82, 180, 255, 1) 0%, rgba(86, 255, 74, 1) 100%);
-  visibility: hidden;
-  -webkit-transform: scaleX(0);
-  transform: scaleX(0);
-  -webkit-transition: all 0.3s ease-in-out 0s;
-  transition: all 0.3s ease-in-out 0s;
-}
-
-.areas p:hover:before {
-  visibility: visible;
-  -webkit-transform: scaleX(1);
-  transform: scaleX(1);
-}
-
-.steps {
-  margin-left: 150px;
-  padding-top: 12px;
-  font-size: 16px;
-  height: 90px;
-  width: 250px;
-}
-.steps p {
-  margin: 0
-}
-
-.steps p {
-  position: relative;
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-}
-
-.steps p:hover {
-  color: rgb(199, 199, 199);
-  cursor: pointer;
-}
-
-.steps p:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background: linear-gradient(90deg, rgba(82, 180, 255, 1) 0%, rgba(86, 255, 74, 1) 100%);
-  visibility: hidden;
-  -webkit-transform: scaleX(0);
-  transform: scaleX(0);
-  -webkit-transition: all 0.3s ease-in-out 0s;
-  transition: all 0.3s ease-in-out 0s;
-}
-
-.steps p:hover:before {
-  visibility: visible;
-  -webkit-transform: scaleX(1);
-  transform: scaleX(1);
-}
-.logo {
-  padding-left: 0;
-  padding-top: 5px;
-  font-size: 10px;
-  height: 90px;
-  width: 220px;
-  position: relative;
-}
-.logo img {
-  height: 40px;
-  width: 200px;
-}
 .main {
+  z-index: 1;
+  position: relative;
   margin-top: 20px;
   width: auto;
   height: auto;
@@ -177,4 +31,55 @@
   padding-left: 140px;
   padding-right: 0px;
   width: 50px;
+}
+.infocard h1 {
+  font-size: 20px;
+}
+
+.footer {
+  position: bottom;
+  background-color: black;
+  width: auto;
+  height: 40px;
+}
+.footer p{
+  color: white;
+  padding-top: 10px;
+  padding-left: 15px;
+}
+.likeicons {
+  font-size: 20px;
+
+}
+.likeicons .glyphicon-ok:hover{
+  cursor: pointer;
+  color: #52b4ff;
+}
+.likeicons .glyphicon-ok .clicked{
+  color: #52b4ff;
+}
+.likeicons .glyphicon-remove:hover{
+  cursor: pointer;
+  color: red;
+}
+.likeicons .glyphicon-remove .clicked {
+  color: red;
+}
+.docfile {
+  font-size: 50px;
+  margin-top: 25px;
+  color: gray;
+}
+.hidden {
+  display:none
+}
+.secWorkNavbar {
+  z-index: 10;
+  margin-top: 70px;
+  width: auto;
+  height: 90px;
+  background-color: rgba(0, 0, 0, 0.7);;
+  color: rgb(216, 216, 216);
+  text-transform: uppercase;
+  position: fixed;
 }

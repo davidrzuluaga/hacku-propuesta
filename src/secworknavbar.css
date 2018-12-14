@@ -1,0 +1,131 @@
+.secWorkNavbar {
+  margin-top: 70px;
+  margin-left: 20%;
+  margin-right: 10%;
+  width: auto;
+  height: 50px;
+  background-color: rgba(90, 173, 155, 0.897);
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  position: fixed;
+  margin-bottom: 5px;
+}
+@media (max-width: 1100px) {
+  .secWorkNavbar {
+    margin-left: 5%;
+    margin-right: 0;
+  }
+}
+@media (max-width: 850px) {
+  .secWorkNavbar {
+    margin-left: 0%;
+    font-size: 10px;
+  }
+}
+.secWorkNavbar .fa-lightbulb-o {color: yellow; }
+
+.secWorkNavbar .doing {
+  margin-left: 20px;  
+  padding-top: 15px;
+  font-size: 15px;
+  height: 90px;
+  width: 140px;
+}
+.secWorkNavbar .fa-chevron-down{
+  -webkit-transform: rotate(270deg);
+}
+.secWorkNavbar .areas {
+  padding-left: 0;
+  padding-top: 15px;
+  font-size: 15px;
+  height: auto;
+  width: auto;
+}
+.secWorkNavbar .areas p {
+  display: inline-block;
+  margin: 0;
+  padding-right: 10px;
+}
+
+.secWorkNavbar .areas p {
+  position: relative;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+.secWorkNavbar .areas p:hover {
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+.secWorkNavbar .areas p:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, rgba(82, 180, 255, 1) 0%, rgba(86, 255, 74, 1) 100%);
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.secWorkNavbar .areas p:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.secWorkNavbar .steps {
+  padding-top: 15px;
+  font-size: 14px;
+  height: auto;
+  width: auto;
+  padding-right: 20px;
+}
+.secWorkNavbar .steps p {
+  margin: 0;
+  padding-right: 10px;
+  display: inline-block;
+}
+
+.secWorkNavbar .steps p {
+  position: relative;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+.secWorkNavbar .steps p:hover {
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+.secWorkNavbar .steps p:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, rgba(82, 180, 255, 1) 0%, rgba(86, 255, 74, 1) 100%);
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.secWorkNavbar .steps p:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+.secWorkNavbar .steps {
+  border-width: 0px;
+  border-left-width: 1px;
+  border-style: solid;
+  border-left-color: rgba(0, 100, 100, 0.473)
+}
