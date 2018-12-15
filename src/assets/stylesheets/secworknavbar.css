@@ -70,6 +70,18 @@
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
 }
+.secWorkNavbar .areas .areaselected {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, rgb(0, 86, 151) 0%, rgba(86, 255, 74, 1) 100%);
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
 
 .secWorkNavbar .steps {
   padding-top: 15px;
@@ -102,7 +114,7 @@
   height: 2px;
   bottom: 0;
   left: 0;
-  background: linear-gradient(90deg, rgba(82, 180, 255, 1) 0%, rgba(86, 255, 74, 1) 100%);
+  background: linear-gradient(90deg, #E7405A 0%, #F28F45 100%); 
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
@@ -111,6 +123,18 @@
 }
 
 .secWorkNavbar .steps p:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+.secWorkNavbar .steps .stepselected {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, #E7405A 0%, #F28F45 100%);  
   visibility: visible;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
