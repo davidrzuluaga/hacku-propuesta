@@ -1,7 +1,7 @@
 import { createStore } from 'redux';
 
 const reducer = (state, action) => {
-    if (action.type === "setPageInfo") {
+    if (action.type === "setTopic") {
         return {
             ...state,
             topic: action.topic
