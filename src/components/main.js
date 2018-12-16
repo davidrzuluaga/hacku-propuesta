@@ -8,9 +8,9 @@ class Main extends Component {
     constructor() {
         super();
         this.state = {
-          info: info,
-          topic: [{step: "HS", area: "ser"}],
-          scrollPosition: 0,
+            info: info,
+            topic: [{step: "HS", area: "ser"}],
+            transition: "slideInUp",
         }
         store.subscribe(() => {
             this.setState({
@@ -30,15 +30,25 @@ class Main extends Component {
         return areaDivided
     }
     complete = (e) => {
+        this.setState({
+            info: this.state.info.map((info, index) => e[0] === info.id ? {id: info.id, url: info.url, title: info.title, summary: info.summary, description: info.description, like: info.like, area: info.area, step: info.step, transition: "bounceOut"} : info),
+            transition: ""
+        })
         var next = "VC"
         if (e[1] === "HS") {
             next = "fichas"
         } else if (e[1] === "fichas"){
             next = "VC"
         }
-        this.setState({
-            info: this.state.info.map((info, index) => e[0] === info.id ? {id: info.id, url: info.url, title: info.title, summary: info.summary, description: info.description, like: info.like, area: info.area, step: next} : info)
-        })
+        var change = (next, e) => {
+            this.setState({
+                info: this.state.info.map((info, index) => e[0] === info.id ? {id: info.id, url: info.url, title: info.title, summary: info.summary, description: info.description, like: info.like, area: info.area, step: next} : info),
+                transition: "slideInUp"
+            })
+        }
+        setTimeout(function () {
+            change(next, e)
+        }, 1000);
     }
     render() {
         return (
@@ -48,7 +58,7 @@ class Main extends Component {
                     <Col className="cardnum" smOffset={7} sm={2}><h1>{this.areaDivider().length}</h1></Col>
                     <Col sm={12}>
                         {this.areaDivider().map((info, index) =>  
-                        <Row key={info.id} className={`infocard ${info.step === "fichas" ? "" : ""} fadeIn animated`}>
+                        <Row key={info.id} className={`infocard ${info.transition ? info.transition : this.state.transition } animated fast`}>
                             <Col sm={1} className="docfile">
                                 <span className="fa fa-file-text-o col-md-1"></span>
                             </Col>
