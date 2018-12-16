@@ -43,7 +43,7 @@ class Main extends Component {
         var change = (next, e) => {
             this.setState({
                 info: this.state.info.map((info, index) => e[0] === info.id ? {id: info.id, url: info.url, title: info.title, summary: info.summary, description: info.description, like: info.like, area: info.area, step: next} : info),
-                transition: "slideInUp"
+                transition: "jackInTheBox"
             })
         }
         setTimeout(function () {
