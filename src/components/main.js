@@ -10,6 +10,7 @@ class Main extends Component {
         this.state = {
           info: info,
           topic: [{step: "HS", area: "ser"}],
+          scrollPosition: 0,
         }
         store.subscribe(() => {
             this.setState({
@@ -36,9 +37,9 @@ class Main extends Component {
             next = "VC"
         }
         this.setState({
-            info: this.state.info.map((info, index) => e[0] === info.title ? {id: info.id, url: info.url, title: info.title, summary: info.summary, description: info.description, like: info.like, area: info.area, step: next} : info)
-          })
-        }
+            info: this.state.info.map((info, index) => e[0] === info.id ? {id: info.id, url: info.url, title: info.title, summary: info.summary, description: info.description, like: info.like, area: info.area, step: next} : info)
+        })
+    }
     render() {
         return (
             <div className="main">
@@ -47,7 +48,7 @@ class Main extends Component {
                     <Col className="cardnum" smOffset={7} sm={2}><h1>{this.areaDivider().length}</h1></Col>
                     <Col sm={12}>
                         {this.areaDivider().map((info, index) =>  
-                        <Row key={info.title} className="infocard">
+                        <Row key={info.id} className={`infocard ${info.step === "fichas" ? "" : ""} fadeIn animated`}>
                             <Col sm={1} className="docfile">
                                 <span className="fa fa-file-text-o col-md-1"></span>
                             </Col>
@@ -58,11 +59,11 @@ class Main extends Component {
                                 {info.step === "HS" ? <p><a href={info.url} target="_blank" rel="noopener noreferrer">{info.url}</a></p> : ""}
                                 {info.step === "HS" || info.step === "fichas" ? <p>{info.description}</p> : "" }
                                 {info.step === "HS" ? <p className="likeicons"><i className="glyphicon glyphicon-ok" aria-hidden="true" title="Me gusta"></i> <i className="glyphicon glyphicon-remove" aria-hidden="true" title="No me gusta"></i></p> : ""}
-                                <div onClick={this.complete.bind(this, [info.title, info.step])} className="button pull-right">Completar</div>
+                                <div onClick={this.complete.bind(this, [info.id, info.step])} className="button pull-right">Completar</div>
                             </Col>
                         </Row>  
                         )}
-                        <Row className={this.areaDivider().length === 0 ? "emptyinfocard" : "empty"}>                        
+                        <Row className={this.areaDivider().length === 0 ? "emptyinfocard fadeIn animated" : "empty"}>                        
                         <p>{this.areaDivider().length === 0 && this.state.topic[0].step === "HS" ? 'Aún no tienes temas asignados te invitamos a que revises tu Plan de aprendizaje' : ""}</p>
                             <p>{this.areaDivider().length === 0 && this.state.topic[0].step === "fichas" ? "Aún no has completado ningún tema de este bloque." : ""}</p>
                             <p>{this.areaDivider().length === 0 && this.state.topic[0].step === "VC" ? "Aún no has completado ninguna competencia de este bloque." : ""}</p>

@@ -13,36 +13,39 @@ class WorkNavbar extends Component {
             this.setState({
               topic: store.getState().topic
             })
-          })
+        })
     }
     changearea = (a) => {
         var topic = this.state.topic.map((topic, i) => 0 === i ? {step: topic.step, area: a} : topic ); 
         this.setState({
             topic: topic
         })
-        store.dispatch( {
-            type: "setTopic",
-            topic: topic
-          })
+        this.updateTopic(topic)
     }
     changestep = (a) => {
         var topic = this.state.topic.map((topic, i) => 0 === i ? {step: a, area: topic.area} : topic ); 
         this.setState({
             topic: topic
         })
+        this.updateTopic(topic)
+    }
+    updateTopic = (topic) => {
         store.dispatch( {
             type: "setTopic",
             topic: topic
         })
     }
     topic = () => {
-        var topic = ""
+        var topic = ["", ""]
         if (this.state.topic[0].step === "HS") {
-            topic = "Hacker Space"
+            topic[0] = "Hacker Space"
+            topic[1] = "Aprende"
         } else if (this.state.topic[0].step === "fichas") {
-            topic = "Fichas"
+            topic[0] = "Fichas"
+            topic[1] = "He Aprendido"
         } else if (this.state.topic[0].step === "VC") {
-            topic = "Validaciones"
+            topic[0] = "Validaciones"
+            topic[1] = "Validar"
         }
         return topic
     }
@@ -52,10 +55,10 @@ class WorkNavbar extends Component {
             <div className="workNavbar">
                 <Row>
                     <Col sm={3} className="topic">
-                        <h1>{this.topic()}</h1>
+                        <h1>{this.topic()[0]}</h1>
                     </Col>
                     <Col sm={2} className="doing hidden-xs">
-                        <p><span className="fa fa-lightbulb-o"></span> Validar <span className="fa fa-chevron-down"></span></p>
+                        <p><span className="fa fa-lightbulb-o"></span> {this.topic()[1]} <span className="fa fa-chevron-down"></span></p>
                     </Col>
                     <Col sm={1} className="areas">
                         <p onClick={this.changearea.bind(this, "ser")}><span className="fa fa-line-chart"></span> ser <span className={this.state.topic[0].area === "ser" ? "areaselected" : ""}></span></p>

@@ -17,23 +17,19 @@ class App extends Component {
     }
   }
   hidebar = () => {
-    if (this.state.scrollPosition > 200 && this.state.workNavbar === "hidden") {
-      this.setState ({
-        workNavbar: ""
-      })
-    } else if (this.state.scrollPosition < 200 && this.state.workNavbar === "") {
-      this.setState ({
-        workNavbar: "hidden"
-      })
+    if (this.state.scrollPosition > 200) {
+      return ""
+    } else if (this.state.scrollPosition < 200) {
+      return "hidden"
     }
   }
   render() {
-    this.hidebar()
+    console.log(this.state.scrollPosition)
     return (
       <div>
         <NavbarComp />
         <ScrollListener onScroll={value => this.setState({scrollPosition: value})}/>
-        <div className={`${this.state.workNavbar} hidden-xs`}>
+        <div className={`${this.hidebar()} hidden-xs`}>
           <SecWorkNavbar />
         </div>
         <div className="app">

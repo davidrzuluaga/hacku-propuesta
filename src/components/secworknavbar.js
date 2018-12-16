@@ -8,6 +8,7 @@ class SecWorkNavbar extends Component {
         super();
         this.state = {
             topic: [{step: "HS", area: "ser"}],
+            scrollPosition: 0,
         }
         store.subscribe(() => {
             this.setState({
@@ -36,22 +37,25 @@ class SecWorkNavbar extends Component {
         })
     }
     topic = () => {
-        var topic = ""
+        var topic = ["", ""]
         if (this.state.topic[0].step === "HS") {
-            topic = "Hacker Space"
+            topic[0] = "Hacker Space"
+            topic[1] = "Aprende"
         } else if (this.state.topic[0].step === "fichas") {
-            topic = "Fichas"
+            topic[0] = "Fichas"
+            topic[1] = "He Aprendido"
         } else if (this.state.topic[0].step === "VC") {
-            topic = "Validaciones"
+            topic[0] = "Validaciones"
+            topic[1] = "Validar"
         }
         return topic
     }
     render() {
-      return (
-            <div className="secWorkNavbar">
-                <Row className="baritems">
+        return (
+            <div className={`slideInDown secWorkNavbar animated`}>
+                <Row className="baritems bounceInLeft animated">
                     <Col sm={2} className="doing">
-                        <p><span className="fa fa-lightbulb-o"></span> Validar <span className="fa fa-chevron-down"></span></p>
+                        <p><span className="fa fa-lightbulb-o"></span> {this.topic()[1]} <span className="fa fa-chevron-down"></span></p>
                     </Col>
                     <Col sm={5} className="areas">
                         <p onClick={this.changearea.bind(this, "ser")}><span className="fa fa-line-chart"></span> ser <span className={this.state.topic[0].area === "ser" ? "areaselected" : ""}></span></p>
