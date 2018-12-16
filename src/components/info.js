@@ -9,6 +9,5 @@ const info = [
       area: "ser",
       step: "HS"
     },
-    
   ]
   export default info

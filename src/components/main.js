@@ -29,8 +29,16 @@ class Main extends Component {
         return areaDivided
     }
     complete = (e) => {
-        console.log(e)
-    }
+        var next = "VC"
+        if (e[1] === "HS") {
+            next = "fichas"
+        } else if (e[1] === "fichas"){
+            next = "VC"
+        }
+        this.setState({
+            info: this.state.info.map((info, index) => e[0] === info.title ? {id: info.id, url: info.url, title: info.title, summary: info.summary, description: info.description, like: info.like, area: info.area, step: next} : info)
+          })
+        }
     render() {
         return (
             <div className="main">
@@ -50,7 +58,7 @@ class Main extends Component {
                                 {info.step === "HS" ? <p><a href={info.url} target="_blank" rel="noopener noreferrer">{info.url}</a></p> : ""}
                                 {info.step === "HS" || info.step === "fichas" ? <p>{info.description}</p> : "" }
                                 {info.step === "HS" ? <p className="likeicons"><i className="glyphicon glyphicon-ok" aria-hidden="true" title="Me gusta"></i> <i className="glyphicon glyphicon-remove" aria-hidden="true" title="No me gusta"></i></p> : ""}
-                                <div onClick={this.complete.bind(this, info.title)} className="button pull-right">Completar</div>
+                                <div onClick={this.complete.bind(this, [info.title, info.step])} className="button pull-right">Completar</div>
                             </Col>
                         </Row>  
                         )}
