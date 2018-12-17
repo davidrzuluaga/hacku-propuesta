@@ -10,7 +10,7 @@ class Main extends Component {
         this.state = {
             info: info,
             topic: [{step: "HS", area: "ser"}],
-            transition: "jackInTheBox",
+            transition: "fadeInUp",
         }
         store.subscribe(() => {
             this.setState({
@@ -52,8 +52,8 @@ class Main extends Component {
         return (
             <div className="main">
                 <Row>
-                    <Col className="card" xs={2}><h1>{this.state.topic[0].area}</h1></Col>
-                    <Col className="card pull-right" id="number" xs={1}><h1>{this.areaDivider().length}</h1></Col>
+                    <Col className="card" sm={2}><h1>{this.state.topic[0].area}</h1></Col>
+                    <Col className="card pull-right" id="number" sm={1}><h1>{this.areaDivider().length}</h1></Col>
                     <Col sm={12}>
                         {this.areaDivider().map((info, index) =>  
                         <Row key={info.id} className={`infocard ${info.transition ? info.transition : this.state.transition } animated fast`}>

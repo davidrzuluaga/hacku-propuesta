@@ -28,9 +28,6 @@ class NavbarComp extends Component {
                 <li>
                   <Mensajes />
                 </li>
-                <li>
-                  <a href="#usuario"><i className="fa fa-user-o"></i></a>                  
-                </li>
               </ul> 
             </Col>
           </Row>

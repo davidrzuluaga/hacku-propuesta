@@ -12,12 +12,10 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      scrollPosition: 0,
-      workNavbar: ""
+      scrollPosition: 0
     }
   }
   render() {
-    //console.log(this.state.scrollPosition)
     return (
       <div>
         <NavbarComp />
