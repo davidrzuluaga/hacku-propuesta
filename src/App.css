@@ -6,7 +6,6 @@
   min-height: 94vh;
   overflow: hidden;
 }
-
 .main {
   z-index: 1;
   position: relative;
@@ -47,10 +46,10 @@
 .card h1:first-letter {
   text-transform:uppercase
 }
-.cardnum{
-  padding-left: 140px;
-  padding-right: 0px;
+#number{
+  margin-right: 40px;
   width: 50px;
+  height: 50px;
 }
 .infocard h1 {
   font-size: 20px;

@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import {Row, Col } from 'react-bootstrap'
+import Calendar from './calendar';
+import Solicitudes from './solicitudes';
+import Mensajes from './mensajes';
+import Feedback from './feedback';
 import '../assets/stylesheets/navbar.css';
 
 class NavbarComp extends Component {
@@ -13,19 +17,16 @@ class NavbarComp extends Component {
             <Col sm={4} className="navitems">
               <ul>
                 <li>
-                  <a href="#feedback">FEEDBACK</a>
+                  <Feedback />
                 </li>
                 <li>
-                  <a href="#solicitudes"><i className="fa fa-hand-pointer-o"></i></a>
+                  <Solicitudes />
                 </li>
                 <li className="calendar">
-                  <a href="#calendario"><i className="fa fa-calendar-o"></i></a>
+                  <Calendar />
                 </li>
                 <li>
-                  <a href="#stickynote"><i className="fa fa-sticky-note-o"></i></a>
-                </li>
-                <li>
-                  <a href="#mensajes"><i className="fa fa-envelope-o"></i></a>
+                  <Mensajes />
                 </li>
                 <li>
                   <a href="#usuario"><i className="fa fa-user-o"></i></a>                  
@@ -35,6 +36,6 @@ class NavbarComp extends Component {
           </Row>
         </div>
         )
-    }
+      }
 }
 export default NavbarComp;
